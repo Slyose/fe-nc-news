@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticleById } from "../api";
 import { fetchCommentsById } from "../api";
+import { Comment } from "./Comment";
 
 export const ShowArticle = () => {
   const [article, setArticle] = useState([]);
@@ -24,7 +25,6 @@ export const ShowArticle = () => {
   } else
     return (
       <div>
-        {console.log(comments)}
         <header className="article_title">
           <h1>{article.article.title}</h1>
         </header>
@@ -42,12 +42,7 @@ export const ShowArticle = () => {
         <section className="article_comments_container">
           <h4>Comments:</h4>
           {comments.map((comment) => {
-            return (
-              <p className="article_comments">
-                {comment.author}: {comment.body}
-                <br></br>Votes: {comment.votes}
-              </p>
-            );
+            return <Comment comment={comment} />;
           })}
         </section>
       </div>

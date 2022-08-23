@@ -16,7 +16,7 @@ export const ListArticlesByTopic = ({ topic }) => {
     <table className="article_table">
       <thead id="articles_th">
         {articles.map((articles) => {
-          return <Article article={articles} />;
+          return <Article article={articles} key={articles.article_id} />;
         })}
       </thead>
     </table>

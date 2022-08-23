@@ -1,11 +1,11 @@
 export const Comment = ({ comment }) => {
   return (
-    <p className="article_comments">
-      <div className="comment_body">
+    <div className="article_comments">
+      <p className="comment_body">
         {comment.author}: {comment.body}
-      </div>
+      </p>
       <br></br>
       <div className="comment_votes">Votes: {comment.votes}</div>
-    </p>
+    </div>
   );
 };

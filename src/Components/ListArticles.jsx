@@ -12,12 +12,14 @@ export const ListArticles = () => {
   }, []);
 
   return (
-    <div>
-      <th id="articles_th">
-        {articles.map((articles) => {
-          return <Article article={articles} />;
-        })}
-      </th>
-    </div>
+    <>
+      <table className="article_table">
+        <thead id="articles_th">
+          {articles.map((articles) => {
+            return <Article article={articles} key={articles.article_id} />;
+          })}
+        </thead>
+      </table>
+    </>
   );
 };

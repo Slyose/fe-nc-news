@@ -1,7 +1,6 @@
 import "./App.css";
 import { FrontPage } from "./Components/FrontPage";
 import { ArticlePage } from "./Components/ArticlePage";
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TopicPage } from "./Components/TopicPage";
 

@@ -10,7 +10,7 @@ export const ListArticlesByTopic = ({ topic }) => {
     fetchArticlesByTopic(topic).then((articleData) => {
       setArticles(articleData);
     });
-  }, []);
+  }, [topic]);
 
   return (
     <div>

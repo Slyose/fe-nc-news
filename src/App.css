@@ -58,6 +58,7 @@
   flex-direction: row;
   align-items: center;
   gap: 1em;
+  justify-content: center;
 }
 
 .article_comments_container {

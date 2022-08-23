@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { fetchAllArticles } from "../api";
 
 export const ListArticles = () => {
@@ -16,8 +17,15 @@ export const ListArticles = () => {
         {articles.map((articles) => {
           return (
             <tr id="articles_tr" key={articles.article_id}>
-              <td>{articles.title}</td>
-              <td>comments: {articles.comment_count}</td>
+              <td>
+                <Link
+                  className="article_link"
+                  to={`/articles/${articles.article_id}`}
+                >
+                  {articles.title}
+                </Link>
+              </td>
+              <td> comments: {articles.comment_count}</td>
             </tr>
           );
         })}

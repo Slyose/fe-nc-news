@@ -21,7 +21,11 @@ export const ShowArticle = () => {
   }, [articleId]);
 
   if (isLoading) {
-    return <p>Loading Article!</p>;
+    return (
+      <>
+        <p>Loading Article!</p>
+      </>
+    );
   } else
     return (
       <div>
@@ -42,7 +46,7 @@ export const ShowArticle = () => {
         <section className="article_comments_container">
           <h4>Comments:</h4>
           {comments.map((comment) => {
-            return <Comment comment={comment} />;
+            return <Comment comment={comment} key={comment.comment_id} />;
           })}
         </section>
       </div>

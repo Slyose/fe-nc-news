@@ -30,7 +30,6 @@ export const fetchArticlesByTopic = (topic) => {
   return axios
     .get(`https://modou-nc-news.herokuapp.com/api/articles?topic=${topic}`)
     .then((res) => {
-      console.log(res.data);
       return res.data;
     });
 };

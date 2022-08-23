@@ -1,5 +1,4 @@
 export const Comment = ({ comment }) => {
-  console.log(comment);
   return (
     <p className="article_comments">
       <div className="comment_body">

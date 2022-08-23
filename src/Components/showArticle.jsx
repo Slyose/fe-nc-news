@@ -18,7 +18,7 @@ export const ShowArticle = () => {
       setComments(commentData);
       setIsLoading(false);
     });
-  }, []);
+  }, [articleId]);
 
   if (isLoading) {
     return <p>Loading Article!</p>;

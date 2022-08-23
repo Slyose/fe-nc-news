@@ -13,12 +13,12 @@ export const ListArticlesByTopic = ({ topic }) => {
   }, [topic]);
 
   return (
-    <div>
-      <th id="articles_th">
+    <table className="article_table">
+      <thead id="articles_th">
         {articles.map((articles) => {
           return <Article article={articles} />;
         })}
-      </th>
-    </div>
+      </thead>
+    </table>
   );
 };

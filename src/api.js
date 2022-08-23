@@ -7,3 +7,21 @@ export const fetchAllArticles = () => {
       return res.data;
     });
 };
+
+export const fetchArticleById = (articleId) => {
+  return axios
+    .get(`https://modou-nc-news.herokuapp.com/api/articles/${articleId}`)
+    .then((res) => {
+      return res.data;
+    });
+};
+
+export const fetchCommentsById = (articleId) => {
+  return axios
+    .get(
+      `https://modou-nc-news.herokuapp.com/api/articles/${articleId}/comments`
+    )
+    .then((res) => {
+      return res.data;
+    });
+};

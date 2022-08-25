@@ -1,3 +1,7 @@
+* {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
 }
@@ -71,6 +75,7 @@
 .article_comments_container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: 2em;
 }
 
@@ -86,4 +91,25 @@
 
 .topic-links {
   font-size: 1.25em;
+}
+
+.upvote-button {
+  border-width: 0.5em;
+  border-radius: 0.5em;
+  padding: 0.1em;
+  margin: 0.5em;
+  background-color: #7ae777;
+}
+
+.downvote-button {
+  border-width: 0.5em;
+  border-radius: 0.5em;
+  padding: 0.1em;
+  margin: 0.5em;
+  background-color: #e78077;
+}
+
+.comment_votes {
+  align-items: right;
+  margin: 1em;
 }

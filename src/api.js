@@ -12,7 +12,7 @@ export const fetchArticleById = (articleId) => {
   return axios
     .get(`https://modou-nc-news.herokuapp.com/api/articles/${articleId}`)
     .then((res) => {
-      return res.data;
+      return res.data.article;
     });
 };
 
@@ -31,5 +31,19 @@ export const fetchArticlesByTopic = (topic) => {
     .get(`https://modou-nc-news.herokuapp.com/api/articles?topic=${topic}`)
     .then((res) => {
       return res.data;
+    });
+};
+
+export const voteArticleById = (articleId, inc_votes) => {
+  return axios
+    .patch(
+      `https://modou-nc-news.herokuapp.com/api/articles/${articleId}/125413542`,
+      {
+        inc_votes,
+      }
+    )
+    .then((response) => {
+      console.log("Patch Votes API", response);
+      return response.data;
     });
 };

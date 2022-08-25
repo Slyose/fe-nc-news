@@ -57,7 +57,6 @@ export const ShowArticle = () => {
           Downvote
         </button>
         {isErrored ? <p> Something went wrong!</p> : null}
-        <h3 className="article_details">Comments: {article.comment_count}</h3>
         <h3 className="article_details">
           Date: {new Date(article.created_at).toUTCString()}
         </h3>

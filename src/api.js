@@ -40,7 +40,6 @@ export const voteArticleById = (articleId, inc_votes) => {
       inc_votes,
     })
     .then((response) => {
-      console.log(response.data);
       return response.data;
     });
 };

@@ -25,19 +25,11 @@ export const ShowArticle = () => {
 
   const handleVote = (inc_votes) => {
     setVote(vote + inc_votes);
-    voteArticleById(articleId, inc_votes)
-      .then((article) => {
-        setVote(0);
-        setArticle(article);
-      })
-      .catch(() => {
-        setVote(0);
-        setIsErrored(true);
-      });
+    voteArticleById(articleId, inc_votes).catch(() => {
+      setVote(0);
+      setIsErrored(true);
+    });
   };
-
-  //add a conditional p tag render to say that there has been an error
-  //consider using a popup to notify user something like window.alert
 
   return isLoading ? (
     <p>Loading Article!</p>
@@ -57,6 +49,7 @@ export const ShowArticle = () => {
           Downvote
         </button>
         {isErrored ? <p> Something went wrong!</p> : null}
+        <h3 className="article_details">Comments: {article.comment_count}</h3>
         <h3 className="article_details">
           Date: {new Date(article.created_at).toUTCString()}
         </h3>

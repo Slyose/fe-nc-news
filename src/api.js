@@ -36,14 +36,10 @@ export const fetchArticlesByTopic = (topic) => {
 
 export const voteArticleById = (articleId, inc_votes) => {
   return axios
-    .patch(
-      `https://modou-nc-news.herokuapp.com/api/articles/${articleId}/125413542`,
-      {
-        inc_votes,
-      }
-    )
+    .patch(`https://modou-nc-news.herokuapp.com/api/articles/${articleId}`, {
+      inc_votes,
+    })
     .then((response) => {
-      console.log("Patch Votes API", response);
       return response.data;
     });
 };

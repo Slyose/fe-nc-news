@@ -32,8 +32,8 @@ export const ListArticles = () => {
         <select value={sort} onChange={handleSort}>
           <option value="created_at">date</option>
           <option value="comment_count">comments</option>
-          <option value="title">title</option>
           <option value="votes">votes</option>
+          <option value="title">title</option>
           <option value="author">author</option>
         </select>
       </section>

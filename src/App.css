@@ -120,3 +120,7 @@ select {
 .sort-by {
   margin-bottom: 2em;
 }
+
+.author-name {
+  font-size: 0.75em;
+}

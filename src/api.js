@@ -64,7 +64,6 @@ export const deleteCommentById = (comment_id) => {
   return axios
     .delete(`https://modou-nc-news.herokuapp.com/api/comments/${comment_id}`)
     .then((response) => {
-      console.log(response.data);
       return response.data;
     });
 };

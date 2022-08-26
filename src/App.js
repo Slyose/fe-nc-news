@@ -4,6 +4,7 @@ import { ArticlePage } from "./Components/ArticlePage";
 import { ArticleCommentsPage } from "./Components/ArticleCommentsPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TopicPage } from "./Components/TopicPage";
+import { NotFound } from "./Components/NotFound";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             path="/articles/:articleId/comments"
             element={<ArticleCommentsPage />}
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -54,8 +54,14 @@ export const SubmitComment = () => {
           Submit
         </button>
       </form>
-      {isCommented ? <p>Comment successfully added!</p> : null}
-      {isErrored ? <p>Error adding comment. Please try again later.</p> : null}
+      {isCommented ? (
+        <p className="success-text">Comment successfully added!</p>
+      ) : null}
+      {isErrored ? (
+        <p className="error-text">
+          Error adding comment. Please try again later.
+        </p>
+      ) : null}
     </>
   );
 };

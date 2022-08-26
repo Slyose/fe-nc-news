@@ -112,3 +112,11 @@
   align-items: right;
   margin: 1em;
 }
+
+select {
+  color: white;
+}
+
+.sort-by {
+  margin-bottom: 2em;
+}

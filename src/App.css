@@ -85,7 +85,7 @@
 }
 
 .article_comments {
-  margin-bottom: 2em;
+  margin-top: 2em;
 }
 
 .topic-links {
@@ -111,4 +111,19 @@
 .comment_votes {
   align-items: right;
   margin: 1em;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#comment-textarea {
+  color: #fff;
+  width: 30em;
+  height: 10em;
+}
+
+#submit-button {
+  color: #fff;
 }

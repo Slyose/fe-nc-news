@@ -4,6 +4,7 @@ import { fetchArticleById } from "../api";
 import { fetchCommentsById } from "../api";
 import { Comment } from "./Comment";
 import { voteArticleById } from "../api";
+import { Link } from "react-router-dom";
 
 export const ShowArticle = () => {
   const [article, setArticle] = useState([]);
@@ -49,7 +50,10 @@ export const ShowArticle = () => {
           Downvote
         </button>
         {isErrored ? <p> Something went wrong!</p> : null}
-        <h3 className="article_details">Comments: {article.comment_count}</h3>
+        <h3 className="article_details">
+          <Link to={`/articles/${articleId}/comments`}>Comments:</Link>{" "}
+          {article.comment_count}
+        </h3>
         <h3 className="article_details">
           Date: {new Date(article.created_at).toUTCString()}
         </h3>

@@ -1,17 +1,17 @@
-import { ShowArticle } from "./ShowArticle";
+import { ShowArticleComments } from "./ShowArticleComments";
 import { Link } from "react-router-dom";
 
-export const ArticlePage = () => {
+export const ArticleCommentsPage = () => {
   return (
-    <div className="App-main">
-      <header>
+    <div>
+      <header className="App-main">
         <h1>
           <Link className="article_link" to="/">
             This Just In!
           </Link>
         </h1>
+        <ShowArticleComments />
       </header>
-      <ShowArticle />
     </div>
   );
 };

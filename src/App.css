@@ -108,6 +108,14 @@
   background-color: #e78077;
 }
 
+#delete-button {
+  border-width: 0.5em;
+  border-radius: 0.5em;
+  padding: 0.1em;
+  margin: 0.5em;
+  background-color: #e78077;
+}
+
 .comment_votes {
   align-items: right;
   margin: 1em;
@@ -115,6 +123,7 @@
 
 select {
   color: white;
+  font-size: 0.8em;
 }
 
 .sort-by {
@@ -137,4 +146,12 @@ select {
 
 .author-name {
   font-size: 0.75em;
+}
+
+.success-text {
+  color: #7ae777;
+}
+
+.error-text {
+  color: #e78077;
 }

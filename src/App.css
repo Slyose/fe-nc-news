@@ -113,6 +113,13 @@
   margin: 1em;
 }
 
+select {
+  color: white;
+}
+
+.sort-by {
+  margin-bottom: 2em;
+}
 .comment-form {
   display: flex;
   flex-direction: column;
@@ -126,4 +133,8 @@
 
 #submit-button {
   color: #fff;
+}
+
+.author-name {
+  font-size: 0.75em;
 }

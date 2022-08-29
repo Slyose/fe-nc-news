@@ -7,11 +7,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: black;
   min-height: 100vh;
@@ -30,10 +25,6 @@
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 .article_table {
@@ -89,6 +80,8 @@
 
 .article_comments {
   margin-top: 2em;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .topic-links {

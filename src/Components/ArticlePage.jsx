@@ -6,7 +6,7 @@ export const ArticlePage = () => {
     <div className="App-main">
       <header>
         <h1>
-          <Link className="article_link" to="/">
+          <Link className="link" to="/">
             This Just In!
           </Link>
         </h1>

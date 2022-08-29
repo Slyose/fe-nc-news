@@ -4,7 +4,7 @@ export const Article = ({ article }) => {
   return (
     <tr className="articles_tr">
       <td className="articles_td">
-        <Link className="article_link" to={`/articles/${article.article_id}`}>
+        <Link className="link" to={`/articles/${article.article_id}`}>
           {article.title}
         </Link>
         <br />

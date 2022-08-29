@@ -59,7 +59,9 @@ export const ShowArticle = () => {
         </button>
         {voteIsErrored ? <p> Something went wrong!</p> : null}
         <h3 className="article_details">
-          <Link to={`/articles/${articleId}/comments`}>Comments:</Link>{" "}
+          <Link className="link" to={`/articles/${articleId}/comments`}>
+            Comments:
+          </Link>{" "}
           {article.comment_count}
         </h3>
         <h3 className="article_details">

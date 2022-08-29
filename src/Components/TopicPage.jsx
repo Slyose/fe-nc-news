@@ -9,7 +9,7 @@ export const TopicPage = () => {
       <header className="App-main">
         <h1>
           {" "}
-          <Link className="article_link" to="/">
+          <Link className="link" to="/">
             This Just In!
           </Link>
         </h1>

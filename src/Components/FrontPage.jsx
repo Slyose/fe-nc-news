@@ -7,9 +7,16 @@ export const FrontPage = () => {
       <header className="App-main">
         <h1>This Just In!</h1>
         <h2 className="topic-links">
-          Hot Topics: <Link to="/articles/topics/coding">Coding</Link>{" "}
-          <Link to="/articles/topics/cooking">Cooking</Link>{" "}
-          <Link to="/articles/topics/football">Football</Link>
+          Hot Topics:{" "}
+          <Link className="link" to="/articles/topics/coding">
+            Coding
+          </Link>{" "}
+          <Link className="link" to="/articles/topics/cooking">
+            Cooking
+          </Link>{" "}
+          <Link className="link" to="/articles/topics/football">
+            Football
+          </Link>
         </h2>
       </header>
       <h2>Hot Headlines:</h2>

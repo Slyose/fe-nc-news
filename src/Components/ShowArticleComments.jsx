@@ -27,7 +27,9 @@ export const ShowArticleComments = () => {
     <>
       <header className="article_title">
         <h2>
-          <Link to={`/articles/${articleId}/`}>{article.title}</Link>
+          <Link className="link" to={`/articles/${articleId}/`}>
+            {article.title}
+          </Link>
         </h2>
       </header>
       <h3>Comment Section</h3>

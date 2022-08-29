@@ -13,7 +13,6 @@ export const TopicPage = () => {
             This Just In!
           </Link>
         </h1>
-        <h2>{`${topic[0].toUpperCase() + topic.substring(1)} Headlines:`}</h2>
         <ListArticlesByTopic topic={topic} />
       </header>
     </div>

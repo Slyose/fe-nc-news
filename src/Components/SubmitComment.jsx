@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { addCommentByArticleId } from "../api";
 
-export const SubmitComment = () => {
+export const SubmitComment = (comments) => {
   const { articleId } = useParams();
 
   const [newComment, setNewComment] = useState({
@@ -44,6 +44,7 @@ export const SubmitComment = () => {
       >
         <label> Enter comment:</label>
         <textarea
+          required
           id="comment-textarea"
           onChange={(event) => {
             handleChange(event);

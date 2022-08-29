@@ -5,6 +5,7 @@ import { fetchCommentsById } from "../api";
 import { Comment } from "./Comment";
 import { voteArticleById } from "../api";
 import { Link } from "react-router-dom";
+import { Error } from "./Error";
 
 export const ShowArticle = () => {
   const [article, setArticle] = useState([]);
@@ -12,12 +13,18 @@ export const ShowArticle = () => {
   const { articleId } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [vote, setVote] = useState(0);
-  const [isErrored, setIsErrored] = useState(false);
+  const [voteIsErrored, setVoteIsErrored] = useState(false);
+  const [articleError, setArticleError] = useState(false);
 
   useEffect(() => {
-    fetchArticleById(articleId).then((articleData) => {
-      setArticle(articleData);
-    });
+    fetchArticleById(articleId)
+      .then((articleData) => {
+        setArticle(articleData);
+        console.log(articleData);
+      })
+      .catch(() => {
+        setArticleError(true);
+      });
     fetchCommentsById(articleId).then((commentData) => {
       setComments(commentData);
       setIsLoading(false);
@@ -28,10 +35,11 @@ export const ShowArticle = () => {
     setVote(vote + inc_votes);
     voteArticleById(articleId, inc_votes).catch(() => {
       setVote(0);
-      setIsErrored(true);
+      setVoteIsErrored(true);
     });
   };
 
+  if (articleError) return <Error error={"404: Article not found."} />;
   return isLoading ? (
     <p>Loading Article!</p>
   ) : (
@@ -49,7 +57,7 @@ export const ShowArticle = () => {
         <button className="downvote-button" onClick={() => handleVote(-1)}>
           Downvote
         </button>
-        {isErrored ? <p> Something went wrong!</p> : null}
+        {voteIsErrored ? <p> Something went wrong!</p> : null}
         <h3 className="article_details">
           <Link to={`/articles/${articleId}/comments`}>Comments:</Link>{" "}
           {article.comment_count}

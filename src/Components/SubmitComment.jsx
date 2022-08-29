@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { addCommentByArticleId } from "../api";
 
-export const SubmitComment = () => {
+export const SubmitComment = (comments) => {
   const { articleId } = useParams();
 
   const [newComment, setNewComment] = useState({
@@ -44,6 +44,7 @@ export const SubmitComment = () => {
       >
         <label> Enter comment:</label>
         <textarea
+          required
           id="comment-textarea"
           onChange={(event) => {
             handleChange(event);
@@ -54,8 +55,14 @@ export const SubmitComment = () => {
           Submit
         </button>
       </form>
-      {isCommented ? <p>Comment successfully added!</p> : null}
-      {isErrored ? <p>Error adding comment. Please try again later.</p> : null}
+      {isCommented ? (
+        <p className="success-text">Comment successfully added!</p>
+      ) : null}
+      {isErrored ? (
+        <p className="error-text">
+          Error adding comment. Please try again later.
+        </p>
+      ) : null}
     </>
   );
 };

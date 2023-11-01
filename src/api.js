@@ -1,8 +1,12 @@
 import axios from "axios";
 
+const instance = axios.create({
+  baseURL: "https://slate-gray-reindeer-tutu.cyclic.app/api",
+});
+
 export const fetchAllArticles = (order, sort_by) => {
-  return axios
-    .get("https://modou-nc-news.herokuapp.com/api/articles", {
+  return instance
+    .get("/articles", {
       params: { order, sort_by },
     })
     .then((res) => {
@@ -11,34 +15,26 @@ export const fetchAllArticles = (order, sort_by) => {
 };
 
 export const fetchArticleById = (articleId) => {
-  return axios
-    .get(`https://modou-nc-news.herokuapp.com/api/articles/${articleId}`)
-    .then((res) => {
-      return res.data.article;
-    });
+  return instance.get(`/articles/${articleId}`).then((res) => {
+    return res.data.article;
+  });
 };
 
 export const fetchCommentsById = (articleId) => {
-  return axios
-    .get(
-      `https://modou-nc-news.herokuapp.com/api/articles/${articleId}/comments`
-    )
-    .then((res) => {
-      return res.data;
-    });
+  return instance.get(`/articles/${articleId}/comments`).then((res) => {
+    return res.data;
+  });
 };
 
 export const fetchArticlesByTopic = (topic) => {
-  return axios
-    .get(`https://modou-nc-news.herokuapp.com/api/articles?topic=${topic}`)
-    .then((res) => {
-      return res.data;
-    });
+  return instance.get(`/articles?topic=${topic}`).then((res) => {
+    return res.data;
+  });
 };
 
 export const voteArticleById = (articleId, inc_votes) => {
-  return axios
-    .patch(`https://modou-nc-news.herokuapp.com/api/articles/${articleId}`, {
+  return instance
+    .patch(`/articles/${articleId}`, {
       inc_votes,
     })
     .then((response) => {
@@ -47,23 +43,18 @@ export const voteArticleById = (articleId, inc_votes) => {
 };
 
 export const addCommentByArticleId = (articleId, { username, body }) => {
-  return axios
-    .post(
-      `https://modou-nc-news.herokuapp.com/api/articles/${articleId}/comments`,
-      {
-        username,
-        body,
-      }
-    )
+  return instance
+    .post(`/articles/${articleId}/comments`, {
+      username,
+      body,
+    })
     .then((response) => {
       return response.data;
     });
 };
 
 export const deleteCommentById = (comment_id) => {
-  return axios
-    .delete(`https://modou-nc-news.herokuapp.com/api/comments/${comment_id}`)
-    .then((response) => {
-      return response.data;
-    });
+  return instance.delete(`/comments/${comment_id}`).then((response) => {
+    return response.data;
+  });
 };
